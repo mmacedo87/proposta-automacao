@@ -440,6 +440,37 @@ html, body, .reveal-viewport { height: 100%; margin: 0; background: var(--bark);
   </div>
 </section>
 
+<!-- 15b. Testes do preço -->
+<section>
+  <span class="eyebrow">Testes do preço final · 1 de novembro de 2026</span>
+  <h2>O passo do preço, posto à prova</h2>
+  <div class="tests">
+    <div>
+      <h3>Testes reais no sistema (proposta de teste para a Holanda)</h3>
+      <table class="t-tests">
+        <thead><tr><th>O que se testou</th><th class="n">Sucesso</th><th class="n">Bloqueio</th><th>Nota</th></tr></thead>
+        <tbody>
+          <tr><td>Página e gravação do preço</td><td class="n"><span class="pill ok">3</span></td><td class="n"><span class="pill ok">2</span></td><td class="muted">14 846,00 € e depois 15 150,00 €. Bloqueios esperados: ligação inválida e desconto de 80 %</td></tr>
+          <tr><td>Resumo reenviado à Bárbara</td><td class="n"><span class="pill ok">1</span></td><td class="n">0</td><td class="muted">Preço decomposto, botão pessoal e código de aprovação novo</td></tr>
+          <tr><td>Aprovação com e sem preço</td><td class="n"><span class="pill ok">1</span></td><td class="n"><span class="pill ok">1</span></td><td class="muted">«OK» sem preço é ignorado; com preço aprova</td></tr>
+          <tr><td>Envio ao cliente</td><td class="n"><span class="pill ok">1</span></td><td class="n">0</td><td class="muted">Decomposição certa; um erro de formatação foi encontrado pelos testes e corrigido</td></tr>
+          <tr><td>Reserva de frete</td><td class="n">0</td><td class="n"><span class="pill ok">1</span></td><td class="muted">Bloqueio esperado: outra transportadora que não a do preço aprovado</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3>Verificações automáticas</h3>
+      <ul class="checks">
+        <li><span>Base de dados do preço: cálculos, recusas, permissões, históricos</span><span class="pill ok">25/25</span></li>
+        <li><span>Código dos passos (página, resumo, aprovação, envio, reserva)</span><span class="pill ok">145/145</span></li>
+        <li><span>Sem segredos nem emails reais no repositório</span><span class="pill ok">OK</span></li>
+        <li><span>Página do preço num Chrome real, como a Bárbara: cálculo em direto igual ao gravado (32 610,00 €)</span><span class="pill ok">OK</span></li>
+      </ul>
+      <p class="small muted" style="margin-top:12px">Nenhum destes testes enviou nada a clientes reais: só a endereços de teste.</p>
+    </div>
+  </div>
+</section>
+
 <!-- 16. O que precisamos -->
 <section>
   <span class="eyebrow">O que precisamos de vocês</span>
@@ -471,7 +502,7 @@ html, body, .reveal-viewport { height: 100%; margin: 0; background: var(--bark);
   <span class="eyebrow">Próximos passos</span>
   <h2>Do teste ao arranque</h2>
   <ol class="steps">
-    <li><div>Ensaio completo com a equipa<span>Do pedido ao plano de expedição, com a Bárbara e a Madalena e destinatários de teste</span></div></li>
+    <li><div>Ensaio completo com a equipa<span>Do pedido ao plano de expedição, com a Bárbara e a Madalena a usar as páginas reais e destinatários de teste</span></div></li>
     <li><div>Acordos de proteção de dados e caixa real<span>Antes de entrar o primeiro cliente</span></div></li>
     <li><div>Piloto com propostas reais, acompanhado<span>Poucos clientes, com revisão de cada proposta</span></div></li>
     <li><div>Integração com o Moloni<span>Orçamento criado no Moloni a partir do mesmo preço</span></div></li>
